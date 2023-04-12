@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Running Text</title>
+	<style>
+		/* Set background colors for the strips */
+		#strip1 {
+			background-color: #FFC0CB;
+		}
+		#strip2 {
+			background-color: #87CEFA;
+		}
+		#strip3 {
+			background-color: #FFD700;
+		}
+		#strip4 {
+			background-color: #98FB98;
+		}
+		#strip5 {
+			background-color: #FFA07A;
+		}
+		/* Set running text styles */
+		.running-text {
+			position: relative;
+			white-space: nowrap;
+			font-size: 20px;
+			font-weight: bold;
+			color: white;
+			animation-duration: 5s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		/* Set animation rules for each strip */
+		#strip1 .running-text {
+			animation-name: move-horizontal;
+			animation-direction: alternate;
+		}
+		#strip2 .running-text {
+			animation-name: move-left;
+			animation-delay: 1s;
+			animation-direction: normal;
+		}
+		#strip3 .running-text {
+			animation-name: move-right;
+			animation-direction: normal;
+			animation-fill-mode: forwards;
+		}
+		#strip4 .running-text {
+			animation-name: move-delayed;
+			animation-delay: 0.5s;
+			animation-direction: normal;
+			animation-fill-mode: forwards;
+		}
+		#strip5 .running-text {
+			animation-name: move-delayed;
+			animation-delay: 1s;
+			animation-direction: reverse;
+			animation-fill-mode: forwards;
+		}
+		/* Define the animations */
+		@keyframes move-horizontal {
+			from {left: 0;}
+			to {left: 100%;}
+		}
+		@keyframes move-left {
+			from {left: 100%;}
+			to {left: 0;}
+		}
+		@keyframes move-right {
+			from {left: 0;}
+			to {left: 100%;}
+		}
+		@keyframes move-delayed {
+			from {left: 0;}
+			to {left: 100%;}
+		}
+	</style>
+</head>
+<body>
+	<div id="strip1">
+		<div class="running-text">Text moving back and forth</div>
+	</div>
+	<div id="strip2">
+		<div class="running-text">Text moving from right to left</div>
+	</div>
+	<div id="strip3">
+		<div class="running-text">Text moving from left to right and stopping</div>
+	</div>
+	<div id="strip4">
+		<div class="running-text">Text moving with a delay of 0.5s</div>
+	</div>
+	<div id="strip5">
+		<div class="running-text">Text moving with a delay of 1s and in reverse</div>
+	</div>
+</body>
+</html>
