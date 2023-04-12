@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IvanenkoLab04-3</title>
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100vh;
+			background-color: #f2f2f2;
+		}	
+		.line {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 20vh;
+		width: 80%;
+		margin-top: 10px;
+		padding: 10px;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		overflow: hidden;
+	}
+	
+	.line:nth-child(odd) {
+		background-color: #e6e6e6;
+	}
+	
+	.animate {
+		animation-duration: 3s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+	
+	.up-down {
+		animation-name: upDown;
+	}
+	
+	.down-up {
+		animation-name: downUp;
+	}
+	
+	@keyframes upDown {
+		0% { transform: translateY(0); }
+		50% { transform: translateY(-100%); }
+		100% { transform: translateY(0); }
+	}
+	
+	@keyframes downUp {
+		0% { transform: translateY(-100%); }
+		50% { transform: translateY(0); }
+		100% { transform: translateY(-100%); }
+	}
+	
+	.freeze {
+		animation-name: freeze;
+		animation-duration: 5s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+	
+	@keyframes freeze {
+		0%, 50%, 100% { transform: translateY(0); }
+		25%, 75% { transform: translateY(-100%); }
+	}
+	
+	.wave {
+		animation-name: wave;
+		animation-duration: 3s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+	
+	@keyframes wave {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-10px); }
+	}
+	
+	.restart {
+		animation-name: restart;
+		animation-duration: 6s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+	
+	@keyframes restart {
+		0%, 50%, 100% { transform: translateY(0); }
+		25% { transform: translateY(-80%); }
+		75% { transform: translateY(-20%); }
+	}
+	
+	.delay {
+		animation-duration: 3s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+	
+	.delay-1 {
+		animation-delay: 0.5s;
+	}
+	
+	.delay-2 {
+		animation-delay: 1s;
+	}
+	
+	.delay-3 {
+		animation-delay: 1.5s;
+	}
+	
+	.delay-4 {
+		animation-delay: 2s;
+	}
+	
+	.delay-5 {
+		animation-delay: 2.5s;
+	}
+	
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="line animate up-down">
+			<p>Текст та рисунки у рядку коливаються.</p>
+<img src="https://via.placeholder.com/150x50/0000FF/FFFFFF?text=1" alt="1">
+<img src="https://via.placeholder.com/150x50/00FF00/000000?text=2" alt="2">
+<img src="https://via.placeholder.com/150x50/FFFF00/000000?text=3" alt="3">
+<img src="https://via.placeholder.com/150x50/FF00FF/FFFFFF?text=4" alt="4">
+<img src="https://via.placeholder.com/150x50/000000/FFFFFF?text=5" alt="5">
+</div>
+<div class="line animate down-up">
+<img src="https://via.placeholder.com/150x50/0000FF/FFFFFF?text=1" alt="1">
+<img src="https://via.placeholder.com/150x50/00FF00/000000?text=2" alt="2">
+<img src="https://via.placeholder.com/150x50/FFFF00/000000?text=3" alt="3">
+<img src="https://via.placeholder.com/150x50/FF00FF/FFFFFF?text=4" alt="4">
+<img src="https://via.placeholder.com/150x50/000000/FFFFFF?text=5" alt="5">
+</div>
+<div class="line animate freeze">
+<img src="https://via.placeholder.com/150x50/0000FF/FFFFFF?text=1" alt="1">
+<img src="https://via.placeholder.com/150x50/00FF00/000000?text=2" alt="2">
+<img src="https://via.placeholder.com/150x50/FFFF00/000000?text=3" alt="3">
+<img src="https://via.placeholder.com/150x50/FF00FF/FFFFFF?text=4" alt="4">
+<img src="https://via.placeholder.com/150x50/000000/FFFFFF?text=5" alt="5">
+</div>
+<div class="line animate wave">
+<p>CARROT</p>
+<p>PUMPKIN</p>
+<p>TOMATO</p>
+<p>ZUCCHINI</p>
+<p>SWEET POTATO</p>
+</div>
+<div class="line">
+<p class="animate restart delay delay-1">PUMPKIN</p>
+<p class="animate restart delay delay-2">CARROT</p>
+<p class="animate restart delay delay-3">SWEET POTATO</p>
+<p class="animate restart delay delay-4">ZUCCHINI</p>
+<p class="animate restart delay delay-5">TOMATO</p>
+</div>
+</div>
+
+</body>
+</html>
